@@ -54,6 +54,7 @@ This folder is not responsible for:
 | [business-context.md](business-context.md) | Business goals, actors, scenarios, and constraints relevant to this container. |
 | [architecture.md](architecture.md) | Target architecture for this container boundary when defined. |
 | [integration-map.md](integration-map.md) | Integration map with links to contracts. |
+| [contracts/registry.md](contracts/registry.md) | Contract ownership, declared scope, known consumers, and impact status. |
 | [data-model.md](data-model.md) | Domain data model and ownership within this container boundary. |
 | [glossary.md](glossary.md) | Terms and definitions owned by this container. |
 | [open-questions.md](open-questions.md) | Unresolved questions owned by this container. |
@@ -63,7 +64,7 @@ This folder is not responsible for:
 | Folder | Responsibility |
 | --- | --- |
 | [adr](adr/README.md) | Architecture Decision Records owned by this container. |
-| [contracts](contracts/README.md) | API, event, and integration contracts owned by this container. |
+| [contracts](contracts/README.md) | API, event, and integration contracts plus contract registry owned by this container. |
 | [diagrams](diagrams/README.md) | Visual documentation that supports source documents. |
 | [specs](specs/README.md) | Requirements, system design, and technical design documents. |
 | [templates](templates/README.md) | Local documentation templates and writing standards. |

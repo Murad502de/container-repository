@@ -113,7 +113,9 @@ Repository relationships define ownership and navigation.
 
 Contract graph defines dependency impact.
 
-A repository tree alone does not prove that a change is safe. Public contract changes must be analyzed through [contract impact](contract-impact.md).
+A repository tree alone does not prove that a change is safe. Public contract changes must be analyzed through [contract impact](contract-impact.md) and checked against the relevant [contract registry](contracts/registry.md).
+
+The integration map shows relationship summaries. Contract documents define behavior. The contract registry records ownership, declared scope, consumers, registry coverage, and impact status.
 
 ## Related Documents
 
@@ -122,4 +124,5 @@ A repository tree alone does not prove that a change is safe. Public contract ch
 - [AI collaboration model](ai-collaboration.md)
 - [Working principles](working-principles.md)
 - [Contract impact model](contract-impact.md)
+- [Contract registry](contracts/registry.md)
 - [Repositories index](../repositories/README.md)

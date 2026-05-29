@@ -28,7 +28,7 @@ Templates are part of the documentation environment. They define how humans and 
 | [current-state-template.md](current-state-template.md) | Observed current state and existing facts. |
 | [system-overview-template.md](system-overview-template.md) | Short orientation to a container boundary. |
 | [business-context-template.md](business-context-template.md) | Business goals, scenarios, stakeholders, and constraints. |
-| [architecture-template.md](architecture-template.md) | Target architecture at a specific responsibility level. |
+| [architecture-template.md](architecture-template.md) | Target architecture at a specific responsibility boundary. |
 | [integration-map-template.md](integration-map-template.md) | High-level integration maps with links to contracts. |
 | [data-model-template.md](data-model-template.md) | Domain entities, relationships, ownership, and lifecycle. |
 | [glossary-template.md](glossary-template.md) | Shared vocabulary and term definitions. |
@@ -53,7 +53,8 @@ Templates are part of the documentation environment. They define how humans and 
 - Accepted architecture decisions belong in ADR files.
 - Terms belong in `glossary.md`.
 - API, event, and integration agreements belong in `docs/contracts`.
-- Contract scope, registry, consumers, and impact rules belong in `contract-impact.md`.
+- Contract scope and impact rules belong in `contract-impact.md`.
+- Contract registry entries belong in `docs/contracts/registry.md`.
 - Architecture can summarize decisions but must link to ADRs.
 - Integration maps can summarize integrations but must link to contracts.
 - Requirements can link to design docs but must not include implementation design.

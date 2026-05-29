@@ -23,7 +23,7 @@ Describe why this integration exists.
 
 ## Owner
 
-<Owning team, direction, service, or person>
+<Owning repository boundary, team, role, or person>
 
 ## Scope
 
@@ -32,6 +32,7 @@ Local | Child | Container | Parent | External | Unknown
 ## Registry
 
 - Registry owner: <scope owner>
+- Registry document: `contracts/registry.md`
 - Registry status: Authoritative | Partial | Missing | Unknown
 - Known consumers: <consumer list or Unknown>
 

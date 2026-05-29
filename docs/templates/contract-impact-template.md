@@ -2,44 +2,55 @@
 
 ## Purpose
 
-Use this template to document contract scope, registry, consumers, and impact analysis for a public contract change.
+Use this template to document contract scope, registry coverage, consumers, escalation, and impact analysis for a public contract change.
 
 ## Template Body
 
 ```md
 # Contract Impact: <Change Name>
 
-## Status
+## Impact Request
 
-Draft | In Review | Accepted | Blocked
+- Impact request ID: CI-0001
+- Status: Draft | In Review | Accepted | Blocked
+- Requested by: <person or role>
+- Date: <YYYY-MM-DD>
 
 ## Contract
 
 - Contract name: <name>
 - Contract type: API | Event | Integration | Data exchange | Public behavior | Other
 - Contract document: <relative-link-or-plain-path>
+- Current contract version: <version or Not documented yet>
+- Changed contract version: <version or Not documented yet>
 
 ## Provider
 
 <Repository or boundary that owns the contract>
 
-## Scope
+## Declared Scope
 
 Local | Child | Container | Parent | External | Unknown
 
-If scope is unknown, record the gap in `open-questions.md`.
+Scope owner: <repository or boundary>
+
+If scope or scope owner is unknown, record the gap in `open-questions.md`.
 
 ## Registry
 
-- Registry owner: <scope owner>
-- Registry document: <relative-link-or-plain-path>
+- Authoritative registry link: <relative-link-or-plain-path>
 - Registry status: Authoritative | Partial | Missing | Unknown
+- Registry owner: <scope owner>
 
-## Known Consumers
+Partial, missing, or unknown registry does not prove change safety.
 
-| Consumer | Usage | Compatibility expectation | Checked |
-| --- | --- | --- | --- |
-| <Consumer boundary> | <Usage summary> | <Expectation> | Yes | No |
+## Affected Consumers
+
+| Consumer | Usage | Compatibility expectation | Check status | Notes |
+| --- | --- | --- | --- | --- |
+| <Consumer boundary> | <Usage summary> | <Expectation> | Not checked | <Notes> |
+
+No listed consumers proves no impact only when registry status is Authoritative.
 
 ## Proposed Change
 
@@ -53,15 +64,29 @@ Describe the proposed contract change.
 - Backward compatibility:
 - Rollout constraints:
 
-## Decision
+## Escalation
 
-Proceed | Blocked | Needs more information
+- Escalation status: Not needed | Needed | Requested | Resolved | Blocked
+- Escalation owner: <scope owner or responsible role>
+- Escalation reason: <scope outside current boundary, partial registry, unknown consumers, external impact, etc.>
 
-## Documentation Gaps
+## Unresolved Gaps
 
-- <Missing scope, registry, consumer, compatibility rule, or owner>
+- <Missing scope, registry owner, consumers, compatibility rule, or source document>
+
+Each unresolved gap must be linked to `open-questions.md`.
+
+## Final Decision
+
+Proceed | Proceed with compatibility constraints | Blocked | Needs more information
+
+Decision owner: <person or role>
+
+Decision notes:
 
 ## Related Documents
 
-- <Related document>
+- Contract registry: `contracts/registry.md`
+- Contract impact model: `contract-impact.md`
+- Open questions: `open-questions.md`
 ```

@@ -15,15 +15,16 @@ The goal is to avoid both extremes:
 
 ## Core Rules
 
-- Repository tree defines ownership.
+- Repository tree defines ownership and navigation.
 - Contract graph defines impact.
 - Provider owns the contract document.
 - Scope owner owns the authoritative registry for that scope.
 - Consumer owns its usage and compatibility expectations.
 - Every public contract must have a declared scope.
-- Impact requests rise to the declared contract scope, not automatically to the root.
-- An authoritative registry can stop impact propagation when it proves the affected consumers are known.
+- Impact requests rise only to the declared contract scope, not automatically to the root.
+- An authoritative registry can stop impact propagation only when it proves the affected consumers are known and checked.
 - A partial or unknown registry is not sufficient proof that a change is safe.
+- Missing consumers do not prove that there is no impact unless the registry is authoritative.
 - Missing scope, registry, or consumers must be recorded as an open question or documentation gap.
 
 ## Contract Scope
@@ -35,11 +36,13 @@ Every public contract should declare its scope:
 | Local | Used only inside one repository boundary. |
 | Child | Used between the current container and one direct child. |
 | Container | Used across multiple direct children inside the current container. |
-| Parent | Owned or governed by the nearest parent container. |
+| Parent | Owned or governed by the nearest upstream boundary that owns the declared contract scope. |
 | External | Used by systems outside the known repository tree. |
 | Unknown | Scope is not documented yet and must be treated as a gap. |
 
 If scope is unknown, do not treat the change as safe. Record the missing scope in [open questions](open-questions.md).
+
+`Parent` does not mean every ancestor above the current container. It means the nearest upstream boundary that owns the contract's declared scope.
 
 ## Ownership Model
 
@@ -55,6 +58,8 @@ If scope is unknown, do not treat the change as safe. Record the missing scope i
 
 A contract registry is authoritative only when it is maintained by the owner of the declared scope.
 
+The default registry for contracts owned by this container is [contract registry](contracts/registry.md).
+
 The registry should identify:
 
 - contract name;
@@ -68,6 +73,15 @@ The registry should identify:
 
 If registry information is partial, stale, or unknown, the safe conclusion is not "no consumers". The safe conclusion is "impact unknown".
 
+Registry status meanings:
+
+| Status | Meaning | Safety meaning |
+| --- | --- | --- |
+| Authoritative | Scope owner maintains the registry and known consumers are tracked. | Impact can stop after affected consumers are checked. |
+| Partial | Some contracts or consumers are known, but coverage is incomplete. | Does not prove change safety. |
+| Missing | Registry is required but not created yet. | Treat impact as unknown. |
+| Unknown | Registry ownership or coverage is not documented. | Treat impact as unknown. |
+
 ## Impact Flow
 
 When a public contract may change:
@@ -79,7 +93,8 @@ When a public contract may change:
 5. Identify known consumers.
 6. Ask each affected consumer to assess usage impact.
 7. Record required migrations or compatibility constraints.
-8. Update ADRs, contracts, integration maps, and open questions as needed.
+8. Escalate only when the declared scope is outside the current container or registry coverage is not authoritative.
+9. Update ADRs, contracts, registry, integration maps, and open questions as needed.
 
 Impact stops when the declared scope owner has an authoritative registry that proves the affected consumers are known and checked.
 
@@ -88,8 +103,29 @@ Impact does not stop when:
 - scope is missing;
 - registry is missing;
 - registry is partial;
+- registry is unknown;
 - consumers are unknown;
+- no consumers are listed but the registry is not authoritative;
 - the change affects external behavior but external consumers are undocumented.
+
+## Escalation And Fallback
+
+Escalation means asking the declared scope owner to confirm registry coverage and consumer impact.
+
+Escalate when:
+
+- the declared scope is `Parent` or `External`;
+- the current container is not the scope owner;
+- registry status is `Partial`, `Missing`, or `Unknown`;
+- consumers are unknown;
+- compatibility expectations are not documented.
+
+Fallback when impact cannot be proven:
+
+1. Block the unsafe change, or keep it backward compatible.
+2. Record the missing information as a documentation gap in [open questions](open-questions.md).
+3. Update or create the registry entry when ownership is clarified.
+4. Re-run impact analysis after the gap is resolved.
 
 ## Documentation Gaps
 
@@ -105,18 +141,11 @@ Record a documentation gap when:
 
 Use [open questions](open-questions.md) for unresolved gaps.
 
-## Minimal Contract Registry
-
-Use this table in the nearest owning document when a dedicated registry does not exist yet:
-
-| Contract | Provider | Scope | Registry owner | Known consumers | Status | Source |
-| --- | --- | --- | --- | --- | --- | --- |
-| Not documented yet | Not documented yet | Unknown | Not assigned | Unknown | Open | Not documented yet |
-
 ## Related Documents
 
 - [Repository relationships](repository-relationships.md)
 - [Contracts](contracts/README.md)
+- [Contract registry](contracts/registry.md)
 - [Integration map](integration-map.md)
 - [Open questions](open-questions.md)
 - [ADR index](adr/README.md)

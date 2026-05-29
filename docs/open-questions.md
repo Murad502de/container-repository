@@ -4,6 +4,8 @@ Status: Active. Use this document for unresolved questions owned by this contain
 
 Parent-owned or child-owned questions belong in the owning repository's `docs/open-questions.md`.
 
+Use this document for unresolved documentation gaps from contract impact analysis, including missing contract scope, registry owner, known consumers, compatibility expectations, or source documents.
+
 ## Question Index
 
 | ID | Question | Status | Scope | Owner | Resolution |
@@ -53,7 +55,8 @@ Link to ADR or source document when answered.
 
 ## Maintenance Rules
 
-- Keep questions at the nearest level that owns the uncertainty.
+- Keep questions at the nearest boundary that owns the uncertainty.
+- Record unresolved contract registry and impact gaps here.
 - Update status instead of deleting resolved questions.
 - Link to the resolution when a question is answered.
 - Do not duplicate the same question at multiple levels.

@@ -22,6 +22,7 @@ Use [integration-contract-template.md](../../templates/integration-contract-temp
 ## Related Documents
 
 - [Contracts index](../README.md)
+- [Contract registry](../registry.md)
 - [Integration map](../../integration-map.md)
 - [Contract impact model](../../contract-impact.md)
 - [Architecture](../../architecture.md)

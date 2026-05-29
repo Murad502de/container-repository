@@ -15,7 +15,7 @@ Draft | Proposed | Accepted | Deprecated
 
 ## Owner
 
-<Team, direction, service, or person>
+<Repository boundary, team, role, or person>
 
 ## Scope
 
@@ -24,6 +24,7 @@ Local | Child | Container | Parent | External | Unknown
 ## Registry
 
 - Registry owner: <scope owner>
+- Registry document: `contracts/registry.md`
 - Registry status: Authoritative | Partial | Missing | Unknown
 - Known consumers: <consumer list or Unknown>
 

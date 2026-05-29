@@ -20,6 +20,7 @@ Use [event-contract-template.md](../../templates/event-contract-template.md).
 ## Related Documents
 
 - [Contracts index](../README.md)
+- [Contract registry](../registry.md)
 - [Integration map](../../integration-map.md)
 - [Contract impact model](../../contract-impact.md)
 - [Architecture](../../architecture.md)
