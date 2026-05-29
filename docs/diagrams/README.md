@@ -1,6 +1,6 @@
 # Diagrams
 
-This folder stores project-level visual documentation.
+This folder stores visual documentation owned by this container boundary.
 
 ## Purpose
 
@@ -10,13 +10,13 @@ Diagrams are not the source of truth by themselves.
 
 ## What Belongs Here
 
-- Project/system-level Mermaid diagrams.
+- Mermaid diagrams owned by this container boundary.
 - Visualizations that link back to source documents.
 - Current-state, target-state, or example diagrams when clearly labeled.
 
 ## What Does Not Belong Here
 
-- Service-only diagrams. Put them in the owning source repository.
+- Parent-owned or child-owned diagrams. Put them in the owning repository.
 - Long architecture explanations. Put them in [architecture.md](../architecture.md) or design specs.
 - Unsourced decorative diagrams.
 
@@ -36,5 +36,6 @@ Use [diagram-template.md](../templates/diagram-template.md) when documenting new
 
 - [Architecture](../architecture.md)
 - [Integration map](../integration-map.md)
+- [Contract impact model](../contract-impact.md)
 - [Data model](../data-model.md)
 - [Specs](../specs/README.md)

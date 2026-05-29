@@ -1,10 +1,10 @@
 # System Overview
 
-Status: Skeleton. Project-level overview has not been documented yet.
+Status: Skeleton. Container overview has not been documented yet.
 
 ## Purpose
 
-Describe why `<project-name>` exists and which system boundary this container repository owns.
+Describe why `<container-name>` exists and which local responsibility boundary this repository container owns.
 
 ## Main Users / Actors
 
@@ -22,26 +22,27 @@ Not documented yet.
 
 ### In Scope
 
-- Project-level context and system-level documentation.
-- Direction and service routing.
-- Cross-direction or cross-service concerns.
+- Current container context and boundary documentation.
+- Parent and child repository routing.
+- Cross-child or cross-boundary concerns owned by this container.
 
 ### Out of Scope
 
-- Concrete service internals.
+- Child repository internals.
 - Detailed API payloads.
-- Implementation plans owned by a source repository.
+- Implementation plans owned by a child repository.
 
-## Related Directions / Services
+## Related Child Repositories
 
-- [Services index](../services/README.md)
+- [Repositories index](../repositories/README.md)
 
 ## Reading Route
 
 1. [Business context](business-context.md)
 2. [Architecture](architecture.md)
 3. [Integration map](integration-map.md)
-4. [Open questions](open-questions.md)
+4. [Contract impact model](contract-impact.md)
+5. [Open questions](open-questions.md)
 
 ## Related Documents
 

@@ -1,34 +1,34 @@
 # Documentation Model
 
-This document defines how project documentation is organized.
+This document defines how documentation is organized inside a self-nesting repository container.
 
-Documentation structure and responsibility levels are governed together with the [operational model](operational-model.md). Operational roles, workflows, decision-making, execution, handoff, acceptance, and documentation impact are defined there.
+Documentation structure and responsibility boundaries are governed together with the [operational model](operational-model.md). Operational roles, workflows, decision-making, execution, handoff, acceptance, and documentation impact are defined there.
 
-This document focuses on documentation structure, levels, ownership, link style, and anti-duplication.
+This document focuses on ownership boundaries, links, document responsibility, and anti-duplication rules.
 
 ## Goal
 
 Documentation should be readable by humans, useful to AI agents, and ready for future retrieval-based workflows.
 
-The documentation should be structured enough to recover project context without relying on a single chat thread or one person's memory.
+The documentation should be structured enough to recover local container context without relying on a single chat thread or one person's memory.
 
 ## README Files Are Hubs
 
-Every README is a navigation hub for its own responsibility level.
+Every README is a navigation hub for its own responsibility boundary.
 
 A README should contain:
 
-- a short description of the repository, folder, direction, or service;
+- a short description of the repository, folder, or boundary;
 - its responsibility boundary;
 - links to the most important documents;
-- the recommended reading route for that level;
-- pointers to the next README when the context becomes more specific.
+- the recommended reading route for that boundary;
+- pointers to parent or child repository READMEs when the context belongs elsewhere.
 
 A README should not contain every detail. If content grows too large, move it into a focused document and link to it.
 
 ## Single Source Of Truth
 
-Project documentation is a connected network of source documents, not a set of duplicated summaries.
+Container documentation is a connected network of source documents, not a set of duplicated summaries.
 
 Every document has one primary responsibility. If another document already owns a type of knowledge, link to it instead of copying it.
 
@@ -44,75 +44,76 @@ Core rules:
 - Architecture can summarize decisions but must link to ADRs.
 - Integration maps can summarize integrations but must link to contracts.
 - Requirements can link to design docs but must not include implementation design.
+- Contract impact rules belong in [contract-impact.md](contract-impact.md).
 - If a section starts duplicating another document, replace it with a short summary and a link.
 
-## Responsibility Levels
+## Responsibility Boundaries
 
-### Container Level
+This template uses recursive repository containers instead of separate canonical templates for container and source repositories.
+
+### Current Container
 
 Location: repository root and [docs](README.md).
 
 Responsibility:
 
-- whole-project context;
-- system boundaries;
-- project-level architecture;
-- project-level decisions;
-- cross-direction and cross-service contracts;
-- integration maps;
-- shared templates and documentation conventions.
+- local boundary context;
+- local architecture and decisions;
+- contracts owned by this boundary;
+- current state, open questions, specs, diagrams, glossary, and templates owned by this boundary;
+- routing to direct child repositories.
 
-### Direction Level
+### Parent Container
 
-Location: a connected direction repository or folder under `services/`.
+Location: external repository URL or local path, documented only when known.
 
 Responsibility:
 
-- direction-wide context;
-- direction current state;
-- direction target architecture;
-- direction-level decisions;
-- direction-level contracts and open questions;
-- routing to concrete service repositories or source entry points.
+- upstream context that owns a wider boundary;
+- decisions and contracts whose scope is above this container;
+- navigation to this container as a direct child.
 
-### Service Level
+This container does not need to know the full parent chain.
 
-Location: a concrete service or source repository.
+### Child Repository
+
+Location: a direct child entry under [repositories](../repositories/README.md).
 
 Responsibility:
 
-- one concrete service boundary;
-- service-specific current state;
-- service-specific architecture;
-- service-specific API, event, and integration contracts;
-- service-specific implementation notes and decisions.
+- one child repository boundary;
+- its own current state, architecture, decisions, contracts, open questions, and implementation notes;
+- its own direct children if it is also a container.
+
+This container does not need to know all descendants below a child repository.
 
 ## Same Structure, Different Meaning
 
-Different levels can use the same documentation structure, but the meaning changes by level.
+Different containers can use the same documentation structure, but the meaning changes by boundary.
 
 Examples:
 
-- `docs/architecture.md` at the container level describes the project-wide architecture.
-- `docs/architecture.md` in a direction repository describes only that direction.
-- `docs/architecture.md` in a service repository describes only that service.
+- `docs/architecture.md` in this repository describes this container boundary.
+- `repositories/<child>/docs/architecture.md` describes that child boundary.
+- a child repository may contain its own `repositories/` folder and repeat the same model.
 
-Do not copy content between levels unless the same fact truly belongs at both levels. Prefer linking to the source level.
+Do not copy content between boundaries unless the same fact truly belongs at both levels. Prefer linking to the source boundary.
 
 ## Where To Put Information
 
-- Project-wide context: container-level docs.
-- Direction-wide context: direction-level docs.
-- Concrete service context: that service repository's docs.
+- Local boundary context: current container docs.
+- Parent-owned context: parent container docs.
+- Child-owned context: child repository docs.
 - Existing behavior and constraints: the nearest relevant `current-state.md`.
 - Unresolved questions: the nearest relevant `open-questions.md`.
-- Accepted decisions: ADR files at the level where the decision applies.
+- Accepted decisions: ADR files at the boundary where the decision applies.
 - API contracts: `docs/contracts/api`.
 - Event contracts: `docs/contracts/events`.
 - Integration contracts: `docs/contracts/integrations`.
+- Contract ownership, scope, registry, and impact: [contract-impact.md](contract-impact.md).
 - Terms: the nearest relevant `glossary.md`.
 - Formal task format: `task-format.md`.
-- Container/source repository relationship: `repository-pairing.md`.
+- Repository relationships: `repository-relationships.md`.
 - Technology stack choices and constraints: `technology-stack.md`.
 
 ## Document Type Responsibilities
@@ -129,7 +130,8 @@ Do not copy content between levels unless the same fact truly belongs at both le
 | Glossary | Shared term definitions. | Architecture, requirements, design docs. |
 | Open questions | Managed unresolved uncertainty. | ADRs or source docs after resolution. |
 | ADR | One architecture decision. | Requirements, contracts, design docs. |
-| Contracts | Agreements at system boundaries. | Integration map, architecture, requirements. |
+| Contracts | Agreements at system boundaries. | Integration map, architecture, requirements, contract impact. |
+| Contract impact | Scope, registry, consumers, and change impact rules for public contracts. | Detailed contract payloads and architecture. |
 | Requirements | What the system must do. | System design, technical design, ADRs. |
 | System design | Component-level solution design. | Requirements, technical design, contracts. |
 | Technical design | Implementation plan. | Requirements, system design, architecture. |
@@ -140,13 +142,13 @@ Do not copy content between levels unless the same fact truly belongs at both le
 
 The documentation model must not depend on a specific technology stack.
 
-Technology choices belong in [technology-stack.md](technology-stack.md), architecture, ADRs, technical design, or source-level development docs depending on scope.
+Technology choices belong in [technology-stack.md](technology-stack.md), architecture, ADRs, technical design, or child repository development docs depending on scope.
 
 Changing a language, framework, database, infrastructure provider, or toolchain should not require rewriting README files, the documentation model, the operational model, AI collaboration rules, or working principles.
 
 ## Link Style
 
-Use relative Markdown links for internal project references.
+Use relative Markdown links for internal references inside this repository.
 
 For links that cross from one repository to another, provide both when possible:
 
@@ -163,4 +165,4 @@ The current goal is to keep documentation ready for future indexing:
 - clear responsibility boundaries;
 - focused Markdown documents;
 - explicit links between related documents;
-- durable decisions, questions, contracts, and terms.
+- durable decisions, questions, contracts, terms, and repository relationships.

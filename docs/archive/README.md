@@ -6,7 +6,7 @@ This folder contains historical material only. It is not the current source of t
 
 ## What Is Archived Here
 
-Obsolete or superseded project-level documentation may be moved here when it is useful for historical reference.
+Obsolete or superseded documentation owned by this container may be moved here when it is useful for historical reference.
 
 ## Why Materials Are Archived
 

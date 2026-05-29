@@ -1,6 +1,6 @@
 # Glossary
 
-Status: Skeleton. Project-wide terms have not been documented yet.
+Status: Skeleton. Terms owned by this container boundary have not been documented yet.
 
 ## Scope
 

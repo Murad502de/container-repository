@@ -1,6 +1,6 @@
 # Technology Stack
 
-This document records project-level technology choices and constraints without making the documentation model depend on a specific stack.
+This document records technology choices and constraints for this container boundary without making the documentation model depend on a specific stack.
 
 ## Principle
 
@@ -14,12 +14,12 @@ Level: Container.
 
 Use this document for:
 
-- project-level technology choices;
-- stack constraints shared across repositories;
-- cross-service runtime, infrastructure, database, observability, deployment, or tooling standards;
+- technology choices owned by this container;
+- stack constraints shared across direct child repositories;
+- cross-boundary runtime, infrastructure, database, observability, deployment, or tooling standards;
 - links to ADRs that justify technology choices.
 
-Service-specific stack details belong in the owning source repository.
+Child-specific stack details belong in the owning child repository.
 
 ## Current Technology Stack
 
@@ -31,8 +31,8 @@ Service-specific stack details belong in the owning source repository.
 
 - If a technology choice affects architecture, record the decision in ADR.
 - If a technology choice affects implementation planning, describe details in technical design.
-- If a technology choice affects local development or runtime, document it in the owning source repository.
-- If the technology is only an implementation detail, do not spread it into project-level model documents.
+- If a technology choice affects local development or runtime, document it in the owning repository boundary.
+- If the technology is only an implementation detail, do not spread it into model documents.
 
 ## Replacement Rules
 
@@ -50,7 +50,7 @@ When a stack changes:
 1. Update this document.
 2. Update affected ADRs or add a new ADR.
 3. Update affected architecture or technical design documents.
-4. Update source-level development docs.
+4. Update child repository development docs.
 5. Check contracts and integration maps only if external behavior changes.
 
 ## Related Documents

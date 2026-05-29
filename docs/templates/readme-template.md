@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Use this template for repository-level README files. A README is a navigation hub and orientation point, not the place where all project knowledge lives.
+Use this template for repository-level README files. A README is a navigation hub and orientation point, not the place where all boundary knowledge lives.
 
 ## Required Structure
 
@@ -25,9 +25,9 @@ Use this template for repository-level README files. A README is a navigation hu
 ## Template Body
 
 ```md
-# <Repository or Service Name>
+# <Repository or Container Name>
 
-Short description of what this repository or service is.
+Short description of what this repository container or child repository is.
 
 ## Responsibility
 

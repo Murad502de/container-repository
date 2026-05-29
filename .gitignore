@@ -1,4 +1,4 @@
-/services/*
-!/services/README.md
-!/services/.gitkeep
+/repositories/*
+!/repositories/README.md
+!/repositories/.gitkeep
 

@@ -1,10 +1,10 @@
 # Technical Design
 
-This folder stores project-level technical design documents.
+This folder stores technical design documents owned by this container boundary.
 
 ## What Belongs Here
 
-- Project-level or cross-direction implementation plans.
+- Implementation plans owned by this container boundary.
 - Migration, validation, rollout, and rollback plans for approved designs that span repositories.
 
 ## What Does Not Belong Here
@@ -22,4 +22,5 @@ Use [technical-design-template.md](../../templates/technical-design-template.md)
 - [Specs index](../README.md)
 - [Architecture](../../architecture.md)
 - [Contracts](../../contracts/README.md)
+- [Contract impact model](../../contract-impact.md)
 - [Open questions](../../open-questions.md)

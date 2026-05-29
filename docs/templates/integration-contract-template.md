@@ -25,6 +25,16 @@ Describe why this integration exists.
 
 <Owning team, direction, service, or person>
 
+## Scope
+
+Local | Child | Container | Parent | External | Unknown
+
+## Registry
+
+- Registry owner: <scope owner>
+- Registry status: Authoritative | Partial | Missing | Unknown
+- Known consumers: <consumer list or Unknown>
+
 ## Auth Method
 
 Describe authentication and authorization.
@@ -50,6 +60,10 @@ Describe known limits or state "Not documented yet".
 ## Security / Privacy Concerns
 
 - <Concern>
+
+## Impact Rules
+
+Use `contract-impact.md` before changing this integration when it has public consumers, external consumers, or unknown consumers.
 
 ## Environments
 

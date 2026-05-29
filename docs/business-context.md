@@ -1,14 +1,14 @@
 # Business Context
 
-Status: Skeleton. Project-level business context has not been documented yet.
+Status: Skeleton. Business context for this container boundary has not been documented yet.
 
 ## Scope
 
 Level: Container.
 
-This document records project-wide business goals, user groups, stakeholders, scenarios, and constraints.
+This document records business goals, user groups, stakeholders, scenarios, and constraints owned by this container boundary.
 
-Direction-level and service-level documents may summarize relevant context and link here, but should not copy this document in full.
+Parent or child repository documents may summarize relevant context and link here, but should not copy this document in full.
 
 ## Business Goals
 

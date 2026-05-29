@@ -1,18 +1,18 @@
 # API Contracts
 
-This folder stores project-level HTTP/API contract documents.
+This folder stores HTTP/API contract documents owned by this container boundary.
 
 ## What Belongs Here
 
-- Project-level or cross-direction API contracts.
+- API contracts owned by this container boundary.
 - Stable request/response behavior at shared system boundaries.
-- API standards shared by multiple repositories.
+- API standards shared by direct child repositories.
 
 ## What Does Not Belong Here
 
 - Event schemas. Use [../events](../events/README.md).
 - External integration agreements. Use [../integrations](../integrations/README.md).
-- Service-only API contracts. Put them in the owning source repository.
+- Parent-owned or child-owned API contracts. Put them in the owning repository.
 
 ## Template
 
@@ -22,4 +22,5 @@ Use [api-contract-template.md](../../templates/api-contract-template.md).
 
 - [Contracts index](../README.md)
 - [Integration map](../../integration-map.md)
+- [Contract impact model](../../contract-impact.md)
 - [Architecture](../../architecture.md)

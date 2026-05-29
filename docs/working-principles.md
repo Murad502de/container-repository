@@ -1,12 +1,12 @@
 # Working Principles
 
-This document records stable principles for future work in this project.
+This document records stable principles for future work in this repository container.
 
 Use it for durable rules that should guide decisions across repositories, contributors, and AI sessions.
 
 ## Principles
 
-### Documentation Is Project Memory
+### Documentation Is Engineering Memory
 
 Important facts, decisions, questions, contracts, and terms must live in Markdown documentation.
 
@@ -14,13 +14,13 @@ Chats and local notes can support discussion, but they are not source of truth u
 
 ### Boundaries Come First
 
-Before changing architecture or code, identify the responsibility level:
+Before changing architecture, contracts, or implementation, identify the local responsibility boundary:
 
-- container;
-- direction;
-- service.
+- parent container;
+- current container;
+- child repository.
 
-Put information at the nearest level that owns it.
+Put information at the nearest boundary that owns it.
 
 ### Current State Is Not Target Architecture
 
@@ -47,6 +47,8 @@ Do not leave accepted decisions only in chat, issue comments, or commit messages
 API, event, and integration behavior belongs in `docs/contracts`.
 
 Architecture and integration maps may summarize contracts, but they must link to the contract documents.
+
+Public contract changes must follow [contract impact](contract-impact.md): repository tree defines ownership, contract graph defines impact.
 
 ### README Files Route Readers
 
@@ -82,7 +84,7 @@ If permission is unclear, Codex Executor must ask for confirmation.
 
 The documentation model must not depend on a specific programming language, framework, database, infrastructure provider, or toolchain.
 
-Technology choices should be isolated in [technology-stack.md](technology-stack.md), ADRs, architecture, technical design, or source-level development docs.
+Technology choices should be isolated in [technology-stack.md](technology-stack.md), ADRs, architecture, technical design, or child repository development docs.
 
 Changing the stack should not require rewriting README files, documentation model, operational model, AI collaboration rules, or working principles.
 
@@ -92,5 +94,6 @@ Changing the stack should not require rewriting README files, documentation mode
 - [Operational model](operational-model.md)
 - [AI collaboration model](ai-collaboration.md)
 - [Task format](task-format.md)
-- [Repository pairing](repository-pairing.md)
+- [Repository relationships](repository-relationships.md)
+- [Contract impact model](contract-impact.md)
 - [Technology stack](technology-stack.md)

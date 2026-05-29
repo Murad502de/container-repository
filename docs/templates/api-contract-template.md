@@ -19,7 +19,13 @@ Draft | Proposed | Accepted | Deprecated
 
 ## Scope
 
-Container | Direction: <name> | Service: <name>
+Local | Child | Container | Parent | External | Unknown
+
+## Registry
+
+- Registry owner: <scope owner>
+- Registry status: Authoritative | Partial | Missing | Unknown
+- Known consumers: <consumer list or Unknown>
 
 ## Endpoint
 
@@ -83,6 +89,10 @@ Describe idempotency rules or state "Not applicable".
 ## Versioning
 
 Describe compatibility and versioning rules.
+
+## Impact Rules
+
+Use `contract-impact.md` before changing this contract when it has public consumers or unknown consumers.
 
 ## Examples
 

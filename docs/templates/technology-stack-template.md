@@ -17,7 +17,7 @@ Programming languages, frameworks, databases, infrastructure providers, and tool
 
 ## Scope
 
-Level: Container | Direction: <name> | Service: <name>
+Boundary: Current container | Parent container | Child repository: <name>
 
 ## Current Technology Stack
 
@@ -29,8 +29,8 @@ Level: Container | Direction: <name> | Service: <name>
 
 - If a technology choice affects architecture, record the decision in ADR.
 - If a technology choice affects implementation planning, describe details in technical design.
-- If a technology choice affects local development or runtime, document it in the owning source repository.
-- If the technology is only an implementation detail, do not spread it into project-level model documents.
+- If a technology choice affects local development or runtime, document it in the owning repository boundary.
+- If the technology is only an implementation detail, do not spread it into model documents.
 
 ## Replacement Rules
 
@@ -38,7 +38,7 @@ Level: Container | Direction: <name> | Service: <name>
 - When a stack changes, update this document first.
 - Update affected ADRs or add a new ADR.
 - Update affected architecture or technical design documents.
-- Update source-level development docs.
+- Update child repository development docs.
 - Check contracts and integration maps only if external behavior changes.
 
 ## Related Documents

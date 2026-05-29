@@ -1,14 +1,14 @@
 # Current State
 
-Status: Skeleton. Project-level current state has not been documented yet.
+Status: Skeleton. Current state for this container boundary has not been documented yet.
 
 ## Scope
 
 Level: Container.
 
-This document records observed facts about the current project/system state across directions or services.
+This document records observed facts about the current state of this repository container boundary.
 
-Direction-specific or service-specific facts belong in the owning repository's `docs/current-state.md`.
+Parent-owned or child-owned facts belong in the owning repository's `docs/current-state.md`.
 
 ## Summary
 
@@ -42,6 +42,10 @@ Not documented yet.
 
 Not documented yet.
 
+## Contract / Registry Facts
+
+Not documented yet.
+
 ## What Must Be Preserved
 
 Not documented yet.
@@ -60,5 +64,6 @@ Add links to source repositories, files, tickets, interviews, commands, screensh
 - [System overview](system-overview.md)
 - [Architecture](architecture.md)
 - [Integration map](integration-map.md)
+- [Contract impact model](contract-impact.md)
 - [Open questions](open-questions.md)
-- [Services index](../services/README.md)
+- [Repositories index](../repositories/README.md)

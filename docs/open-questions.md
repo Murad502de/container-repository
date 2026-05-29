@@ -1,8 +1,8 @@
 # Open Questions
 
-Status: Active. Use this document for project-level unresolved questions.
+Status: Active. Use this document for unresolved questions owned by this container boundary.
 
-Direction-specific or service-specific questions belong in the owning repository's `docs/open-questions.md`.
+Parent-owned or child-owned questions belong in the owning repository's `docs/open-questions.md`.
 
 ## Question Index
 

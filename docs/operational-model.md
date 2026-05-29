@@ -1,12 +1,12 @@
 # Operational Model
 
-This document defines how project participants work together.
+This document defines how participants work together inside this repository container.
 
-The key principle is: repository documentation is the project source of truth. Chats, verbal discussions, local notes, and AI conclusions are not source of truth until important decisions, facts, questions, or constraints are recorded in the appropriate Markdown document.
+The key principle is: repository documentation is the source of truth for this container boundary. Chats, verbal discussions, local notes, and AI conclusions are not source of truth until important decisions, facts, questions, or constraints are recorded in the appropriate Markdown document.
 
 ## Purpose
 
-This model keeps project work controlled, consistent, and reviewable.
+This model keeps container work controlled, consistent, and reviewable.
 
 It exists so that:
 
@@ -14,12 +14,12 @@ It exists so that:
 - assumptions are not treated as facts;
 - implementation does not start without context;
 - AI and human contributors understand their roles;
-- documentation remains durable project memory;
+- documentation remains durable engineering memory;
 - acceptance review can verify work against clear operating rules.
 
 ## Participants And Roles
 
-Use the roles that match the project. A small project may assign several roles to one person.
+Use the roles that match the container. A small container may assign several roles to one person.
 
 ### Technical Owner
 
@@ -27,7 +27,7 @@ The Technical Owner owns technical direction, priorities, architecture acceptanc
 
 The Technical Owner:
 
-- sets the project direction;
+- sets the container direction;
 - approves key decisions;
 - corrects wrong conclusions;
 - accepts work results;
@@ -82,7 +82,7 @@ They must:
 
 ## Main Workflow Cycle
 
-Project work is performed cyclically:
+Container work is performed cyclically:
 
 1. Discussion and analysis.
 2. Engineering summary.
@@ -111,13 +111,14 @@ Formal task descriptions written in the [task format](task-format.md) define sco
 
 ## Discussion And Analysis
 
-Discussion is used to understand the task, identify risks, determine documentation level, and decide whether the work creates:
+Discussion is used to understand the task, identify risks, determine the owning documentation boundary, and decide whether the work creates:
 
 - a fact for `current-state.md`;
 - a question for `open-questions.md`;
 - a decision for an ADR;
 - a term for `glossary.md`;
 - a contract for `docs/contracts`;
+- a contract impact record or registry gap for `contract-impact.md`;
 - a requirement for `docs/specs/requirements`;
 - an architecture statement for `architecture.md`;
 - an engineering summary for execution.
@@ -142,6 +143,8 @@ During execution:
 - read the nearest README;
 - read related source documents;
 - determine the documentation level;
+- check parent-child repository relationships when scope crosses boundaries;
+- check contract impact when a public contract may change;
 - change only files in scope;
 - avoid inventing architecture, APIs, domain model, or business logic;
 - use templates when creating new documents;
@@ -168,6 +171,7 @@ Acceptance review checks:
 
 - whether the result matches the task;
 - whether documentation levels were preserved;
+- whether contract impact was checked when contracts changed;
 - whether knowledge duplication was avoided;
 - whether invented facts appeared;
 - whether unrelated files changed;
@@ -187,6 +191,7 @@ Documentation impact:
 - New open questions:
 - ADR needed:
 - Contracts affected:
+- Contract impact checked:
 - Glossary affected:
 - Next documentation step:
 ```
@@ -226,6 +231,7 @@ If the decision concerns system interaction, record it in contracts or integrati
 - [AI collaboration model](ai-collaboration.md)
 - [Working principles](working-principles.md)
 - [Task format](task-format.md)
-- [Repository pairing](repository-pairing.md)
+- [Repository relationships](repository-relationships.md)
+- [Contract impact model](contract-impact.md)
 - [Technology stack](technology-stack.md)
 - [Open questions](open-questions.md)

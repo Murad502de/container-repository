@@ -1,10 +1,10 @@
 # Requirements
 
-This folder stores project-level requirements documents.
+This folder stores requirements documents owned by this container boundary.
 
 ## What Belongs Here
 
-- Project-level or cross-direction functional requirements.
+- Functional requirements owned by this container boundary.
 - Non-functional requirements and acceptance criteria.
 - Business rules that shape system behavior across repositories.
 
@@ -22,4 +22,5 @@ Use [requirements-template.md](../../templates/requirements-template.md).
 
 - [Specs index](../README.md)
 - [Business context](../../business-context.md)
+- [Contract impact model](../../contract-impact.md)
 - [Open questions](../../open-questions.md)

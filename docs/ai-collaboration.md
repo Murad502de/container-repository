@@ -1,6 +1,6 @@
 # AI Collaboration Model
 
-This document defines how AI tools should work with this project.
+This document defines how AI tools should work with this repository container.
 
 AI collaboration rules are part of the broader [operational model](operational-model.md). This document focuses on context recovery, safe execution, and durable project memory.
 
@@ -8,7 +8,7 @@ AI collaboration rules are part of the broader [operational model](operational-m
 
 AI should act as an engineering accelerator, not as a source of undocumented architecture.
 
-Repository documentation is the source of truth. AI agents must use it to recover context, route work to the correct level, and keep project memory durable across chats, IDE sessions, devices, and contributors.
+Repository documentation is the source of truth. AI agents must use it to recover context, route work to the correct boundary, and keep engineering memory durable across chats, IDE sessions, devices, and contributors.
 
 ## Core Rules
 
@@ -18,7 +18,7 @@ Repository documentation is the source of truth. AI agents must use it to recove
 - Treat Markdown documentation as durable project memory.
 - Do not change files without explicit execution permission from the user.
 - Do not start implementation work before the relevant current state, target model, and open questions are understood.
-- Do not mix container-level, direction-level, and service-level documentation.
+- Do not mix parent, current container, and child repository documentation.
 - Write important new knowledge into the right Markdown document.
 - Keep README files as navigation hubs.
 - Link to source documents instead of copying their content.
@@ -33,15 +33,16 @@ When starting from the repository root, read:
 3. [Documentation model](documentation-model.md)
 4. [Working principles](working-principles.md)
 5. [Task format](task-format.md)
-6. [Repository pairing](repository-pairing.md)
-7. [Technology stack](technology-stack.md)
-8. [System overview](system-overview.md)
-9. [Business context](business-context.md)
-10. [Architecture](architecture.md)
-11. [Open questions](open-questions.md)
-12. [Services index](../services/README.md)
+6. [Repository relationships](repository-relationships.md)
+7. [Contract impact model](contract-impact.md)
+8. [Technology stack](technology-stack.md)
+9. [System overview](system-overview.md)
+10. [Business context](business-context.md)
+11. [Architecture](architecture.md)
+12. [Open questions](open-questions.md)
+13. [Repositories index](../repositories/README.md)
 
-When the work concerns a connected direction or service, continue from that repository's README.
+When the work concerns a child repository, continue from that repository's README.
 
 ## Documentation Before Code
 
@@ -63,6 +64,7 @@ Use the correct document type for each kind of knowledge:
 - Unresolved questions go to `open-questions.md`.
 - Accepted decisions go to ADR files.
 - API, event, and integration agreements go to contracts.
+- Contract scope, registry, consumers, and impact go to `contract-impact.md`.
 - Terms go to `glossary.md`.
 - Long explanations should become focused documents and be linked from README hubs.
 
@@ -111,9 +113,9 @@ When permission is ambiguous, ask for confirmation before editing.
 
 - Do not generate code from assumptions alone.
 - Do not create large generic documents without a clear owner.
-- Do not duplicate the same context across levels.
+- Do not duplicate the same context across boundaries.
 - Do not duplicate source documents when a link is enough.
-- Do not move service-specific details into the container-level README.
+- Do not move child repository details into the current container README.
 - Do not leave important decisions only in chat.
 - Do not silently change files outside the approved scope.
 - Do not treat a formal task description as permission to edit unless the user explicitly asks for execution.

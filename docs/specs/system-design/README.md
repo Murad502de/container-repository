@@ -1,10 +1,10 @@
 # System Design
 
-This folder stores project-level system design documents.
+This folder stores system design documents owned by this container boundary.
 
 ## What Belongs Here
 
-- Project-level or cross-direction component designs.
+- Component designs owned by this container boundary.
 - Data flow, integration flow, failure, security, and operational design that spans repositories.
 
 ## What Does Not Belong Here
@@ -22,4 +22,5 @@ Use [system-design-template.md](../../templates/system-design-template.md).
 - [Specs index](../README.md)
 - [Architecture](../../architecture.md)
 - [Contracts](../../contracts/README.md)
+- [Contract impact model](../../contract-impact.md)
 - [Diagrams](../../diagrams/README.md)

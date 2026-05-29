@@ -1,6 +1,6 @@
 # Documentation
 
-This folder contains project-level engineering memory for `<project-name>`.
+This folder contains engineering memory for `<container-name>`.
 
 Use this README as the documentation navigation hub. It should help humans and AI agents find the right source document without turning this folder into a duplicate knowledge base.
 
@@ -8,16 +8,16 @@ Use this README as the documentation navigation hub. It should help humans and A
 
 This folder is responsible for:
 
-- project-wide and system-wide context;
+- current container context and responsibility boundary;
 - documentation model, operational model, AI collaboration model, and working principles;
-- project-level current state, architecture, integration maps, data model, glossary, open questions, ADRs, contracts, diagrams, specs, archive, and templates;
-- routes to direction-level or service-level documentation when the topic becomes more specific.
+- current state, architecture, integration maps, data model, glossary, open questions, ADRs, contracts, diagrams, specs, archive, and templates owned by this container;
+- routes to parent or child repository documentation when the topic belongs outside this boundary.
 
 This folder is not responsible for:
 
-- concrete service implementation details;
-- source code;
-- duplicating direction-level or service-level documentation.
+- implementation details owned by a child repository;
+- documenting all descendants at arbitrary depth;
+- duplicating parent or child repository documentation.
 
 ## Recommended Reading Route
 
@@ -26,15 +26,16 @@ This folder is not responsible for:
 3. [Documentation model](documentation-model.md)
 4. [Working principles](working-principles.md)
 5. [Task format](task-format.md)
-6. [Repository pairing](repository-pairing.md)
-7. [Technology stack](technology-stack.md)
-8. [System overview](system-overview.md)
-9. [Business context](business-context.md)
-10. [Architecture](architecture.md)
-11. [Integration map](integration-map.md)
-12. [Data model](data-model.md)
-13. [Open questions](open-questions.md)
-14. [Services index](../services/README.md)
+6. [Repository relationships](repository-relationships.md)
+7. [Contract impact model](contract-impact.md)
+8. [Technology stack](technology-stack.md)
+9. [System overview](system-overview.md)
+10. [Business context](business-context.md)
+11. [Architecture](architecture.md)
+12. [Integration map](integration-map.md)
+13. [Data model](data-model.md)
+14. [Open questions](open-questions.md)
+15. [Repositories index](../repositories/README.md)
 
 ## Document Index
 
@@ -42,40 +43,41 @@ This folder is not responsible for:
 | --- | --- |
 | [ai-collaboration.md](ai-collaboration.md) | Rules for AI-assisted work and context recovery. |
 | [operational-model.md](operational-model.md) | Roles, workflow, decision-making, execution, handoff, acceptance, and documentation impact rules. |
-| [documentation-model.md](documentation-model.md) | Documentation levels, ownership, links, and anti-duplication rules. |
-| [working-principles.md](working-principles.md) | Stable principles for future work in this project. |
+| [documentation-model.md](documentation-model.md) | Responsibility boundaries, ownership, links, and anti-duplication rules. |
+| [working-principles.md](working-principles.md) | Stable principles for future work in this container. |
 | [task-format.md](task-format.md) | Required structure for formal work requests. |
-| [repository-pairing.md](repository-pairing.md) | Rules for linking container and source repositories. |
+| [repository-relationships.md](repository-relationships.md) | Parent-child repository relationships for self-nesting containers. |
+| [contract-impact.md](contract-impact.md) | Contract-based impact analysis model. |
 | [technology-stack.md](technology-stack.md) | Stack-agnostic documentation rules and technology stack ownership. |
-| [current-state.md](current-state.md) | Project-level observed facts and constraints. |
-| [system-overview.md](system-overview.md) | Short project/system orientation. |
-| [business-context.md](business-context.md) | Project-wide business goals, actors, scenarios, and constraints. |
-| [architecture.md](architecture.md) | Project-level target architecture when defined. |
-| [integration-map.md](integration-map.md) | Project-level integration map with links to contracts. |
-| [data-model.md](data-model.md) | Project-level domain data model and ownership. |
-| [glossary.md](glossary.md) | Project-wide terms and definitions. |
-| [open-questions.md](open-questions.md) | Project-level unresolved questions. |
+| [current-state.md](current-state.md) | Observed facts and constraints for this container boundary. |
+| [system-overview.md](system-overview.md) | Short orientation to this container boundary. |
+| [business-context.md](business-context.md) | Business goals, actors, scenarios, and constraints relevant to this container. |
+| [architecture.md](architecture.md) | Target architecture for this container boundary when defined. |
+| [integration-map.md](integration-map.md) | Integration map with links to contracts. |
+| [data-model.md](data-model.md) | Domain data model and ownership within this container boundary. |
+| [glossary.md](glossary.md) | Terms and definitions owned by this container. |
+| [open-questions.md](open-questions.md) | Unresolved questions owned by this container. |
 
 ## Folder Index
 
 | Folder | Responsibility |
 | --- | --- |
-| [adr](adr/README.md) | Project-level Architecture Decision Records. |
-| [contracts](contracts/README.md) | Project-level API, event, and integration contracts. |
+| [adr](adr/README.md) | Architecture Decision Records owned by this container. |
+| [contracts](contracts/README.md) | API, event, and integration contracts owned by this container. |
 | [diagrams](diagrams/README.md) | Visual documentation that supports source documents. |
 | [specs](specs/README.md) | Requirements, system design, and technical design documents. |
 | [templates](templates/README.md) | Local documentation templates and writing standards. |
 | [archive](archive/README.md) | Historical material that is not current source of truth. |
 
-## Related Levels
+## Related Boundaries
 
 - Container root: [../README.md](../README.md)
-- Services index: [../services/README.md](../services/README.md)
+- Child repositories index: [../repositories/README.md](../repositories/README.md)
 
 ## Working Rules
 
 - Keep this README as a navigation hub.
 - Put detailed knowledge into focused documents.
 - Link to related documents instead of copying their content.
-- Keep project-wide context here; move direction or service details to the owning repository.
+- Keep knowledge at the nearest container boundary that owns it.
 - Use [templates](templates/README.md) when creating or normalizing documents.

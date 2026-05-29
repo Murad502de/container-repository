@@ -18,6 +18,8 @@ Describe the principle.
 ## Rules
 
 - <Rule>
+- Public contract changes follow `contract-impact.md`.
+- Repository tree defines ownership; contract graph defines impact.
 
 ## Related Documents
 

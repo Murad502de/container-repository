@@ -1,6 +1,6 @@
 # Contracts
 
-This folder stores project-level API, event, and integration contracts.
+This folder stores API, event, and integration contracts owned by this container boundary.
 
 ## Purpose
 
@@ -8,14 +8,14 @@ Contracts define agreements at system boundaries. They are source-of-truth docum
 
 ## What Belongs Here
 
-- Project-level or cross-direction API contracts.
-- Project-level or cross-direction event contracts.
-- Project-level or cross-direction integration contracts.
-- Shared contract standards that affect multiple repositories.
+- API contracts owned by this container boundary.
+- Event contracts owned by this container boundary.
+- Integration contracts owned by this container boundary.
+- Shared contract standards that affect direct child repositories.
 
 ## What Does Not Belong Here
 
-- Service-only contracts. Put them in the owning source repository.
+- Parent-owned or child-owned contracts. Put them in the owning repository.
 - High-level integration summaries. Put them in [integration-map.md](../integration-map.md).
 - Implementation plans. Put them in [technical design specs](../specs/technical-design/README.md).
 
@@ -36,5 +36,6 @@ Contracts define agreements at system boundaries. They are source-of-truth docum
 ## Maintenance Rules
 
 - Keep detailed payloads and behavior in contracts, not in integration maps.
+- Declare contract scope and registry ownership according to [contract impact](../contract-impact.md).
 - Link related requirements, designs, ADRs, and diagrams.
 - Mark contract status clearly.

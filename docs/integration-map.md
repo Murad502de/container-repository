@@ -1,14 +1,14 @@
 # Integration Map
 
-Status: Skeleton. Project-level integrations have not been documented yet.
+Status: Skeleton. Integrations owned by this container boundary have not been documented yet.
 
 ## Scope
 
 Level: Container.
 
-This document maps project-level, cross-direction, and cross-service integrations and links to detailed contracts.
+This document maps integrations owned by this container boundary and links to detailed contracts.
 
-Service-owned integrations belong in the owning repository's `docs/integration-map.md`.
+Parent-owned or child-owned integrations belong in the owning repository's `docs/integration-map.md`.
 
 ## Integration Summary
 
@@ -28,5 +28,6 @@ Not documented yet.
 
 - [Architecture](architecture.md)
 - [Contracts](contracts/README.md)
+- [Contract impact model](contract-impact.md)
 - [Diagrams](diagrams/README.md)
 - [Open questions](open-questions.md)

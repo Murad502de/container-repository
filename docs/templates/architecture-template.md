@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Use this template to describe the target architecture at a specific responsibility level.
+Use this template to describe the target architecture at a specific responsibility boundary.
 
 ## Template Body
 
@@ -11,9 +11,9 @@ Use this template to describe the target architecture at a specific responsibili
 
 Status: Draft | Active | Archived
 
-## Scope and Level
+## Scope and Boundary
 
-Level: Container | Direction: <name> | Service: <name>
+Boundary: Current container | Parent container | Child repository: <name>
 
 Describe what this architecture owns and what it does not own.
 
@@ -31,7 +31,7 @@ Summarize the target architecture in a few paragraphs.
 
 - <Responsibility owned elsewhere>
 
-## Components / Modules / Services
+## Components / Boundaries / Repositories
 
 | Component | Responsibility | Owner |
 | --- | --- | --- |

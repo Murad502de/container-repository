@@ -34,7 +34,8 @@ Describe why this operating model exists.
 ## Execution Rules
 
 - Read the nearest README and related source documents first.
-- Determine the documentation level before changing files.
+- Determine the owning documentation boundary before changing files.
+- Check contract impact when a public contract may change.
 - Change only files in the approved scope.
 - Avoid inventing architecture, APIs, domain model, or business logic.
 - Use templates when creating new documents.
@@ -76,6 +77,7 @@ Formal task descriptions define scope and acceptance criteria, but they still do
 - New open questions:
 - ADR needed:
 - Contracts affected:
+- Contract impact checked:
 - Glossary affected:
 - Next documentation step:
 ```

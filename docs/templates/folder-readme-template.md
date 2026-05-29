@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Use this template for README files inside folders such as `docs/`, `services/`, `contracts/`, `diagrams/`, and `specs`.
+Use this template for README files inside folders such as `docs/`, `repositories/`, `contracts/`, `diagrams/`, and `specs`.
 
 ## Required Structure
 

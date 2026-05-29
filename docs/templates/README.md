@@ -2,7 +2,7 @@
 
 This folder stores reusable Markdown templates for engineering documentation.
 
-Templates are part of the documentation environment. They define how humans and AI agents should create or normalize project memory.
+Templates are part of the documentation environment. They define how humans and AI agents should create or normalize engineering memory.
 
 ## Purpose
 
@@ -17,15 +17,16 @@ Templates are part of the documentation environment. They define how humans and 
 | --- | --- |
 | [readme-template.md](readme-template.md) | Repository README files as navigation hubs. |
 | [folder-readme-template.md](folder-readme-template.md) | Folder README files and indexes. |
-| [documentation-model-template.md](documentation-model-template.md) | Documentation levels, ownership, links, and anti-duplication rules. |
+| [documentation-model-template.md](documentation-model-template.md) | Responsibility boundaries, ownership, links, and anti-duplication rules. |
 | [operational-model-template.md](operational-model-template.md) | Roles, workflow, decision-making, handoff, and documentation impact. |
 | [ai-collaboration-template.md](ai-collaboration-template.md) | Rules for AI-assisted work and context recovery. |
-| [working-principles-template.md](working-principles-template.md) | Stable project principles. |
+| [working-principles-template.md](working-principles-template.md) | Stable container principles. |
 | [task-format-template.md](task-format-template.md) | Formal task description format. |
-| [repository-pairing-template.md](repository-pairing-template.md) | Container/source repository pairing rules. |
+| [repository-relationships-template.md](repository-relationships-template.md) | Parent-child repository relationship rules. |
+| [contract-impact-template.md](contract-impact-template.md) | Contract scope, registry, consumers, and impact analysis. |
 | [technology-stack-template.md](technology-stack-template.md) | Stack-agnostic technology documentation. |
 | [current-state-template.md](current-state-template.md) | Observed current state and existing facts. |
-| [system-overview-template.md](system-overview-template.md) | Short orientation to a project, direction, or service. |
+| [system-overview-template.md](system-overview-template.md) | Short orientation to a container boundary. |
 | [business-context-template.md](business-context-template.md) | Business goals, scenarios, stakeholders, and constraints. |
 | [architecture-template.md](architecture-template.md) | Target architecture at a specific responsibility level. |
 | [integration-map-template.md](integration-map-template.md) | High-level integration maps with links to contracts. |
@@ -52,6 +53,7 @@ Templates are part of the documentation environment. They define how humans and 
 - Accepted architecture decisions belong in ADR files.
 - Terms belong in `glossary.md`.
 - API, event, and integration agreements belong in `docs/contracts`.
+- Contract scope, registry, consumers, and impact rules belong in `contract-impact.md`.
 - Architecture can summarize decisions but must link to ADRs.
 - Integration maps can summarize integrations but must link to contracts.
 - Requirements can link to design docs but must not include implementation design.
@@ -65,7 +67,7 @@ Do not duplicate content from linked documents.
 
 ## Repository Autonomy
 
-Direction and service repositories should keep their own local copies of these templates so they remain usable when opened outside the container repository.
+Child repositories should keep their own local copies of these templates when they are also repository containers.
 
 When templates are updated in one template repository, synchronize the same template names and core rules across related template repositories.
 

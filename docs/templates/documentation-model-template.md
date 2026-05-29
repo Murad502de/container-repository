@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Use this template to define documentation levels, ownership, link style, and anti-duplication rules.
+Use this template to define repository boundaries, ownership, link style, and anti-duplication rules.
 
 ## Template Body
 
@@ -21,17 +21,17 @@ Explain how README files route readers.
 
 - <Rule>
 
-## Responsibility Levels
+## Responsibility Boundaries
 
-### Container Level
-
-- <Responsibility>
-
-### Direction Level
+### Current Container
 
 - <Responsibility>
 
-### Service Level
+### Parent Container
+
+- <Responsibility>
+
+### Child Repositories
 
 - <Responsibility>
 
@@ -42,6 +42,7 @@ Explain how README files route readers.
 | Current facts | `current-state.md` |
 | Decisions | `docs/adr` |
 | Contracts | `docs/contracts` |
+| Contract impact | `contract-impact.md` |
 | Terms | `glossary.md` |
 | Questions | `open-questions.md` |
 

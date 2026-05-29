@@ -19,7 +19,13 @@ Draft | Proposed | Accepted | Deprecated
 
 ## Scope
 
-Container | Direction: <name> | Service: <name>
+Local | Child | Container | Parent | External | Unknown
+
+## Registry
+
+- Registry owner: <scope owner>
+- Registry status: Authoritative | Partial | Missing | Unknown
+- Known consumers: <consumer list or Unknown>
 
 ## Event Name
 
@@ -48,6 +54,10 @@ Describe when this event is emitted.
 ## Versioning
 
 Describe compatibility and versioning rules.
+
+## Impact Rules
+
+Use `contract-impact.md` before changing this event when it has public consumers or unknown consumers.
 
 ## Delivery Guarantees
 
