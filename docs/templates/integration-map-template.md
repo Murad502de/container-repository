@@ -1,18 +1,37 @@
-# Integration Map: Title
+# Integration Map Template
 
-## Systems
+## Purpose
 
-List integrated systems.
+Use this template to map relationships between systems. An integration map shows who talks to whom, why, in which direction, and where the detailed contract lives.
 
-## Data Flows
+## Template Body
 
-Describe exchanged data and direction.
+```md
+# Integration Map
 
-## Protocols
+Status: Draft | Active | Archived
 
-List protocols, formats, and authentication methods.
+## Scope
 
-## Ownership
+Level: Container | Direction: <name> | Service: <name>
 
-Document system owners and contacts.
+Describe which integrations are covered.
 
+## Integration Summary
+
+| System | Purpose | Direction | Initiator | Data Categories | Protocol / Transport | Auth Overview | Owner | Contract |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| <System> | <Purpose> | <A -> B> | <Initiator> | <Categories> | <Overview> | <Overview> | <Owner> | <Contract link> |
+
+## Risks / Constraints
+
+- <Risk or constraint>
+
+## Current vs Target Notes
+
+Separate current observed integrations from target integrations when needed.
+
+## Related Documents
+
+- [<Document title>](<relative-link>)
+```

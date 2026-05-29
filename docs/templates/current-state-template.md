@@ -1,18 +1,67 @@
-# Current State: Title
+# Current State Template
+
+## Purpose
+
+Use this template to document observed facts about what exists now. Current state is evidence-based memory, not target architecture.
+
+## Template Body
+
+```md
+# Current State
+
+Status: Draft | Active | Archived
+
+## Scope
+
+Level: Container | Direction: <name> | Service: <name>
+
+Describe the system area observed.
 
 ## Summary
 
-Describe the current state.
+Briefly summarize what is currently known.
 
-## Known Behavior
+## Observed Current Structure
 
-List observed behavior and system facts.
+- <Observed component, repository, folder, or process>
 
-## Constraints
+## Existing Capabilities
 
-List constraints and limitations.
+- <Capability currently supported>
 
-## Risks
+## Known Working Scenarios
 
-List known risks and gaps.
+- <Scenario and evidence>
 
+## Known Limitations
+
+- <Limitation>
+
+## Known Problems / Risks
+
+- <Problem or risk>
+
+## Dependencies
+
+- <Dependency and purpose>
+
+## Data / Integration Facts
+
+- <Observed fact>
+
+## What Must Be Preserved
+
+- <Behavior, data, integration, or scenario>
+
+## What Must Not Be Carried Over
+
+- <Problem, coupling, or obsolete behavior>
+
+## Evidence / Source References
+
+- <File path, command, document, ticket, or interview reference>
+
+## Related Documents
+
+- [<Document title>](<relative-link>)
+```

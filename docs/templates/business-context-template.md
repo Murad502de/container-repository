@@ -1,18 +1,60 @@
-# Business Context: Title
+# Business Context Template
 
-## Goals
+## Purpose
 
-Describe business goals.
+Use this template to explain why the project, direction, or service exists and which business constraints shape the system.
+
+## Template Body
+
+```md
+# Business Context
+
+Status: Draft | Active | Archived
+
+## Scope
+
+Level: Container | Direction: <name> | Service: <name>
+
+Describe the business scope of this document.
+
+## Business Goals
+
+- <Goal>
+
+## User Groups
+
+- <User group and need>
 
 ## Stakeholders
 
-List stakeholders and owners.
+- <Stakeholder and responsibility>
 
-## Processes
+## Core Business Scenarios
 
-Describe relevant business processes.
+1. <Scenario>
+2. <Scenario>
 
-## Constraints
+## Monetization / Operating Assumptions
 
-List business constraints and dependencies.
+List confirmed assumptions or state that they are not documented yet.
 
+## MVP / Delivery Priorities
+
+- <Priority>
+
+## Business Constraints
+
+- <Constraint>
+
+## Business Risks
+
+- <Risk>
+
+## Success Criteria
+
+- <Measurable or observable criterion>
+
+## Related Documents
+
+- [<Document title>](<relative-link>)
+```
